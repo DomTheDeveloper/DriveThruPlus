@@ -20,6 +20,6 @@ var ItemItemView = Backbone.View.extend({
     },
 
     addToCart: function () {
-        cart_list.add(this.model);
+        cart_list.add(this.model.toJSON());
     }
 });
