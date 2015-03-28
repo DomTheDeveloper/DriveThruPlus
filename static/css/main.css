@@ -4,6 +4,14 @@
     border-right:1px solid #b2b2b2
 }
 
+.content-block-title+.card, .content-block-title+.content-block, .content-block-title+.list-block{
+	margin-top:40px;
+}
+
+.navbar{
+	height:120px;
+}
+
 .view-main {
     width:-webkit-calc(100% - 321px);
     width:-moz-calc(100% - 321px);
@@ -11,14 +19,26 @@
     width:calc(100% - 321px)
 }
 
+#clear {
+    margin-top: 8px;
+}
+
 .card-header-pic {
     cursor: pointer;
 }
 
 .card-header-pic .card-header {
-    height: 100px;
+    height: 120px;
     background-size: cover;
     background-position: center;
+}
+
+#category-list .card-header-pic .card-header {
+    height: 400px;
+}
+
+.card-content-inner p {
+    color: black;
 }
 
 @media (max-width: 768px) {
