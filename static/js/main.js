@@ -62,6 +62,7 @@ $(function() {
 });
 
     function showText() { 
-        document.getElementById("checkout").style.display="inline"; 
+        document.getElementById("checkout").style.display="inline";
+        document.getElementById("checkout-btn").style.display="none";
     }
 
