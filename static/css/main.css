@@ -4,6 +4,14 @@
     border-right:1px solid #b2b2b2
 }
 
+.content-block-title+.card, .content-block-title+.content-block, .content-block-title+.list-block{
+	margin-top:40px;
+}
+
+.navbar{
+	height:120px;
+}
+
 .view-main {
     width:-webkit-calc(100% - 321px);
     width:-moz-calc(100% - 321px);
