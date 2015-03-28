@@ -21,6 +21,7 @@
 
 #clear {
     margin-top: 8px;
+	margin-right:6px;
 }
 
 .card-header-pic {
@@ -28,13 +29,13 @@
 }
 
 .card-header-pic .card-header {
-    height: 120px;
+    height: 500px;
     background-size: cover;
     background-position: center;
 }
 
 #category-list .card-header-pic .card-header {
-    height: 400px;
+    height: 500px;
 }
 
 .card-content-inner p {
