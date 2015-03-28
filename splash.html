@@ -1,0 +1,224 @@
+
+<!DOCTYPE html><html class=''>
+<head><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="canonical" href="http://codepen.io/GreenSock/pen/FnsqC" />
+
+<link rel='stylesheet' href='http://s.codepen.io/assets/reset/reset.css'>
+<style class="cp-pen-styles">body{
+  font-family:Asap;
+	background-color:#1d1d1d;
+  color:white;
+  margin:20px;  
+  zoom: 300%;
+  
+}
+
+
+#banner {
+  -webkit-backface-visibility:hidden;
+  width:400px;
+  height:250px;
+  background:white;
+  overflow:hidden;
+  
+  -moz-transform: scale(3);
+  
+   -moz-margin-start: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.panel {
+  position:absolute;
+  width:400px;
+  height:250px;
+  overflow:hidden;
+
+}
+
+#panel1 {
+  background: #1d1d1d;
+ 
+}
+
+#panel2 {
+  background: url(http://backyardburgersms.com/wp-content/uploads/2013/02/classic-double-back-yard-burger.png);
+  background-repeat: no-repeat;
+}
+
+#panel1 h1 {
+  position: relative;
+  font-size:40px;
+  line-height:240px;
+  text-align:center;
+  width:400px;
+}
+
+#panel2 h2{
+  margin: 0;
+  position: absolute;
+  top: 188px;
+  width: 360px;
+  font-size: 22px;
+  text-align: center;
+  padding: 20px;
+  background: #1d1d1d;
+}
+
+#panel3 {
+  top:520px;
+}
+
+#panel3 #info{
+  position:absolute;
+  top:125px;
+  width:100%;
+  padding:10px;
+  height:125px;
+  background: #1d1d1d;
+}
+
+#panel3 h1 {
+  font-size:34px;
+  font-weight:700;
+  letter-spacing: 1px;
+}
+
+#panel3 li {
+  position:relative;
+  margin-top:10px;
+  color: lightgray;
+}
+
+#panel3 #orderNow {
+  position:absolute;
+  top:60px;
+  left:230px;
+  background:#ffc600;
+  color:#000;
+  font-size:16px;
+  font-weight:bold;
+  padding:10px;
+  border-radius:10px;
+  border: 4px solid transparent;
+}
+
+#panel3 #orderNow:hover {
+  background:#ffaa00;
+  border: 4px solid #fff;
+  cursor: pointer;
+}
+
+/* --- stats --- */
+#stats {
+  font-family: Signika Negative, Asap, sans-serif;
+  font-weight:300;
+  font-size:18px;
+  float:left;
+  color:#ddd;
+  margin-left:20px;
+  
+}
+
+#stats div {
+  margin-bottom:10px;
+  
+}
+
+#stats div span {
+  font-size:22px;
+  color:white;
+}
+
+#restart {
+  visibility:hidden;
+}
+</style></head><body>
+<link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+<div id="banner">
+  <div class="panel" id="panel1">
+    <h1>Hungry?</h1>
+  </div>
+  <div class="panel" id="panel2">
+    <h2>How about now?!</h2>
+  </div>
+  <div class="panel" id="panel3">
+    <div id="info">
+      <h1>DriveThru<strong style="color:lime">+</strong></h1>
+      <ul>
+        <li>McDonald's</li>
+        <li>Michigan State</li>
+      </ul>
+      <div id="orderNow" onclick="window.location = 'index.html'">Start Now!</div>
+    </div>
+  </div>
+  
+</div>
+
+<div id="stats" style="display:none;">
+  <div>duration: <span id="duration">0</span> 1 iteration</div>
+  <div>totalDuration: <span id="totalDuration">0</span> all iterations including repeatDelays</div>
+  <div>repeat: <span id="repeatCount">0</span> of <span id="totalRepeatCount"></span></div>
+  <div>time: <span id="time">1</span></div>
+  <div>totalTime: <span id="totalTime">1</span></div>
+  <div>progress: <span id="progress">1</span></div>
+  <div>totalProgress: <span id="totalProgress">1</span></div>
+  <button id="restart">restart()</button>
+</div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script><script src='http://s.cdpn.io/16327/sizzle.min.js'></script>
+<script>
+var $ = Sizzle, $panel1 = $('#panel1'), $panel2 = $('#panel2'), $panel3 = $('#panel3'), $panel1Text = $('#panel1 h1'), $panel2Text = $('#panel2 h2'), $info = $('#info'), $list = $('li'), $orderNow = $('#orderNow'), tl;
+var tl = new TimelineMax({
+    delay: 0.5,
+    repeat: 3,
+    repeatDelay: 2,
+    onUpdate: updateStats,
+    onRepeat: updateReps,
+    onComplete: restart
+});
+tl.from(panel1, 0.5, { autoAlpha: 0 }).from($panel1Text, 0.5, {
+    scale: 0.5,
+    autoAlpha: 0,
+    ease: Back.easeOut
+}).set($panel2, { top: 0 }, '+=2').from($panel2, 0.2, {
+    autoAlpha: 0,
+    scale: 1.5
+}).from($panel2Text, 0.2, { top: 250 }, '+=0.5').to($panel2Text, 0.2, { top: 250 }, '+=2').set($panel3, { top: 0 }, 'final').from($info, 0.5, { top: 250 }, 'final').to($panel2, 0.5, { top: -60 }, 'final').staggerFrom($list, 0.3, {
+    autoAlpha: 0,
+    left: 50
+}, 0.1, '+=0.2').from($orderNow, 0.5, {
+    scale: 0,
+    autoAlpha: 0,
+    ease: Back.easeOut
+});
+var duration = document.getElementById('duration'), totalDuration = document.getElementById('totalDuration'), repeatCount = document.getElementById('repeatCount'), totalRepeatCount = document.getElementById('totalRepeatCount'), time = document.getElementById('time'), totalTime = document.getElementById('totalTime'), progress = document.getElementById('progress'), totalProgress = document.getElementById('totalProgress'), restart = document.getElementById('restart'), reps = 0;
+function updateReps() {
+    reps++;
+    repeatCount.innerHTML = reps;
+}
+function updateStats() {
+    time.innerHTML = tl.time().toFixed(2);
+    totalTime.innerHTML = tl.totalTime().toFixed(2);
+    progress.innerHTML = tl.progress().toFixed(2);
+    totalProgress.innerHTML = tl.totalProgress().toFixed(2);
+}
+function reset() {
+    reps = 0;
+    duration.innerHTML = tl.duration().toFixed(2);
+    totalDuration.innerHTML = tl.totalDuration().toFixed(2);
+    repeatCount.innerHTML = reps;
+    totalRepeatCount.innerHTML = tl.repeat();
+}
+function restart() {
+    TweenLite.to(restart, 0.4, { autoAlpha: 1 });
+}
+restart.onclick = function () {
+    reset();
+    TweenLite.set(restart, { autoAlpha: 0 });
+    tl.restart();
+};
+reset();
+//@ sourceURL=pen.js
+</script>
+<script src='http://codepen.io/assets/editor/live/css_live_reload_init.js'></script>
+</body></html>
