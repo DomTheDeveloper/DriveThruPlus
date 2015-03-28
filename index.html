@@ -15,7 +15,7 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <div class="center sliding">
-                        <img src="static/img/logos/drivethruplus.png" style="height:100px;" />
+						<img src="static/img/dommy.png" style="height:100px;" />
                     </div>
                 </div>
             </div>
@@ -40,7 +40,11 @@
 
                         <div class="content-block-title">Total: $<span id="cart-total">1000</span></div>
                         <div class="content-block">
-                            <a href="#" class="button button-big button-fill">Checkout</a>
+                            <a href="#" class="button button-big button-fill" onclick="showText()">Checkout</a>
+                            <form id="checkout" method="post" action="/checkout" style="display: none">  
+                                <div id="dropin" style="padding-top: 25px; padding-bottom: 15px"></div>
+                                <input type="submit" value="Complete" class="button">
+                            </form>
                         </div>
 
                         <div class="content-block">
@@ -145,5 +149,14 @@
     <script src="static/js/views/cartitemview.js"></script>
     <script src="static/js/views/app.js"></script>
     <script src="static/js/main.js"></script>
+
+    <!-- Brain Tree PayPal -->
+
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
+
+
+
+
 </body>
 </html>
