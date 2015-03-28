@@ -23,7 +23,7 @@ var CartView = Backbone.View.extend({
         this.collection.each(function (item) {
             total += item.get("price");
         });
-        this.$total.html(total);
+        this.$total.html(total.toPrecision(3));
     },
 
     addAll: function () {
@@ -34,7 +34,7 @@ var CartView = Backbone.View.extend({
         this.collection.each(function (item) {
             total += item.get("price");
         });
-        this.$total.html(total.toPrecision(2));
+        this.$total.html(total.toPrecision(3));
     },
 
     clearCart: function () {
