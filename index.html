@@ -44,10 +44,12 @@
                         </div>
 
                         <div class="content-block">
+						<a id="start-togetherjs">
                             <img src="static/img/rep.png" style="text-align:center; margin-left:20px; margin-top:-40px;" />
-                            <a href="#" id="start-togetherjs" class="button button-big">
+                            <a href="#" class="button button-big">
                                 <i class="fa fa-phone"></i> Connect with a Representative
                             </a>
+						</a>
                         </div>
                     </div>
                 </div>
@@ -79,7 +81,9 @@
 
     <script type="text/template" id="category_template">
         <a href="category.html?name=<%= title %>"><div class="card card-header-pic">
-            <div style="background-image:url('<%= imagelink %>')" valign="bottom" class="card-header color-black no-border"><%= title %></div>
+            <div style="background-image:url('<%= imagelink %>')" valign="bottom" class="card-header color-black no-border">
+				<span style="text-decoration:bold; font-size:xx-large;" class=""><%= title %></span>
+			</div>
             <div class="card-content">
                 <div class="card-content-inner">
                     <p><%= description %></p>
@@ -90,13 +94,15 @@
 
     <script type="text/template" id="item_template">
         <div class="card card-header-pic">
-            <div style="background-image:url('<%= imagelink %>')" valign="bottom" class="card-header color-black no-border"><%= name %></div>
+            <div style="background-image:url('<%= imagelink %>')" valign="bottom" class="card-header color-black no-border">
+			<span style="text-decoration:bold; font-size:xx-large;" class=""><%= name %> ($<%= price %>)</span>
+			</div>
             <div class="card-content">
                 <div class="card-content-inner">
                     <p><%= description %></p>
                 </div>
             </div>
-            <div class="card-footer">$<%= price %></div>
+            <div class="card-footer"></div>
         </div>
     </script>
 
