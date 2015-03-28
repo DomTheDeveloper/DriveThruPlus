@@ -1,19 +1,22 @@
 var ItemView = Backbone.View.extend({
-    tagName:  "div",
-    className: "col-33",
-    template: _.template($('#item_template').html()),
+    el: $('.pages'),
 
-    events: {
-        "click": "addToCart"
+    initialize: function() {
+        this.$list = $("#item-list");
+
+        this.listenTo(this.collection, 'add', this.addOne);
+        this.listenTo(this.collection, 'reset', this.addAll);
+
+        this.addAll();
     },
 
-    render: function() {
-        console.log(this.model.toJSON());
-        this.$el.html(this.template(this.model.toJSON()));
-        return this;
+    addOne: function(model) {
+        var view = new ItemItemView({model: model});
+        this.$list.append(view.render().el);
     },
 
-    addToCart: function() {
-        console.log("to cart");
-    }
+    addAll: function () {
+        this.$list.empty();
+        this.collection.each(this.addOne, this);
+    },
 });
