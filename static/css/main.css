@@ -1,0 +1,31 @@
+.view-left {
+    float:left;
+    width:320px;
+    border-right:1px solid #b2b2b2
+}
+
+.view-main {
+    width:-webkit-calc(100% - 321px);
+    width:-moz-calc(100% - 321px);
+    width:-ms-calc(100% - 321px);
+    width:calc(100% - 321px)
+}
+
+.card-header-pic .card-header {
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .view-left {
+        width:240px
+    }
+
+    .view-main {
+        width:-webkit-calc(100% - 241px);
+        width:-moz-calc(100% - 241px);
+        width:-ms-calc(100% - 241px);
+        width:calc(100% - 241px)
+    }
+}
