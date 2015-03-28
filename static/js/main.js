@@ -13,3 +13,10 @@ var mainView = myApp.addView('.view-main', {
 });
 
 $("#start-togetherjs").click(TogetherJS);
+
+var list = new ItemCollection();
+
+$(function() {
+    var list = new ItemCollection();
+    var app = new AppView({collection: list});
+});

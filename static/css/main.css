@@ -11,6 +11,10 @@
     width:calc(100% - 321px)
 }
 
+.card-header-pic {
+    cursor: pointer;
+}
+
 .card-header-pic .card-header {
     height: 100px;
     background-size: cover;
