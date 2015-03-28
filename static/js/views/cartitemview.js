@@ -1,7 +1,7 @@
-var ItemView = Backbone.View.extend({
-    tagName:  "div",
-    className: "col-33",
-    template: _.template($('#item_template').html()),
+var CartItemView = Backbone.View.extend({
+    tagName:  "li",
+    className: "swipeout",
+    template: _.template($('#cart_template').html()),
 
     events: {
         "click": "addToCart"

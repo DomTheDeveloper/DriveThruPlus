@@ -32,10 +32,10 @@
             </div>
 
             <div class="pages">
-                <div class="page" data-page="index-left">
+                <div class="cart page" data-page="index-left">
                     <div class="page-content">
                         <div class="content-block-title">Your Items</div>
-                        <div class="list-block">
+                        <div id="user-cart" class="list-block">
                             <ul>
                                 <li class="swipeout">
                                     <div class="item-content swipeout-content">
@@ -48,7 +48,6 @@
                                         <a href="#" class="action1 bg-red">Remove</a>
                                     </div>
                                 </li>
-
                                 <li class="swipeout">
                                     <div class="item-content swipeout-content">
                                         <div class="item-inner">
@@ -60,7 +59,6 @@
                                         <a href="#" class="action1 bg-red">Remove</a>
                                     </div>
                                 </li>
-
                                 <li class="swipeout">
                                     <div class="item-content swipeout-content">
                                         <div class="item-inner">
@@ -152,12 +150,24 @@
 
     <script type="text/template" id="item_template">
         <div class="card card-header-pic">
-            <div style="background-image:url('http://placehold.it/150x150')" valign="bottom" class="card-header color-white no-border"><%= name %></div>
+            <div style="background-image:url('<%= imagelink %>')" valign="bottom" class="card-header color-black no-border"><%= title %></div>
             <div class="card-content">
                 <div class="card-content-inner">
                     <p><%= description %></p>
                 </div>
             </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="cart_template">
+        <div class="item-content swipeout-content">
+            <div class="item-inner">
+                <div class="item-title"><%= name %></div>
+                <div class="item-after">$100.00</div>
+            </div>
+        </div>
+        <div class="swipeout-actions-right">
+            <a href="#" class="action1 bg-red">Remove</a>
         </div>
     </script>
 
