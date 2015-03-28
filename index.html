@@ -38,7 +38,9 @@
                             </ul>
                         </div>
 
-                        <div class="content-block-title">Total: $<span id="cart-total">1000</span></div>
+                        <div class="content-block-title">
+						<br />
+						Total: $<span id="cart-total">1000</span></div>
                         <div class="content-block">
                             <a href="#" class="button button-big button-fill">Checkout</a>
                         </div>
@@ -95,7 +97,7 @@
     <script type="text/template" id="item_template">
         <div class="card card-header-pic">
             <div style="background-image:url('<%= imagelink %>')" valign="bottom" class="card-header color-black no-border">
-			<span style="text-decoration:bold; font-size:xx-large;" class=""><%= name %> ($<%= price %>)</span>
+			<span style="text-decoration:bold; font-size:xx-large;" class=""><%= name %> <small>($<%= price %>)</small></span>
 			</div>
             <div class="card-content">
                 <div class="card-content-inner">

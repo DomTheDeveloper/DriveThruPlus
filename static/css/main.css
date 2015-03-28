@@ -29,13 +29,13 @@
 }
 
 .card-header-pic .card-header {
-    height: 500px;
+    height: 520px;
     background-size: cover;
     background-position: center;
 }
 
 #category-list .card-header-pic .card-header {
-    height: 500px;
+    height: 520px;
 }
 
 .card-content-inner p {
