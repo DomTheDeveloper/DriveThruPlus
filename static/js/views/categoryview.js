@@ -20,10 +20,14 @@ var CategoryView = Backbone.View.extend({
     link: function() {
         var data = this.model.get("items");
         var json_list = [];
+
         _.each(data, function(value, key) {
+            value['title'] = value['name'];
             json_list.push(value);
         });
+
         var collection = new ItemCollection(json_list);
+
         window.setTimeout(function () {
             var view = new ItemView({collection: collection});
         }, 400);

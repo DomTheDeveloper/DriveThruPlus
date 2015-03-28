@@ -10,6 +10,7 @@ var CartView = Backbone.View.extend({
         this.$total = $("#cart-total");
 
         this.listenTo(this.collection, 'add', this.addOne);
+        this.listenTo(this.collection, 'remove', this.addAll);
         this.listenTo(this.collection, 'reset', this.addAll);
         this.listenTo(this.collection, 'add', this.recalculateTotal);
         this.listenTo(this.collection, 'remove', this.recalculateTotal);
@@ -39,6 +40,6 @@ var CartView = Backbone.View.extend({
         this.collection.each(function (item) {
             total += item.get("price");
         });
-        this.$total.html(total.toPrecision(3));
+        this.$total.html(Math.round(total * 100) / 100);
     }
 });

@@ -24,7 +24,8 @@ ref.authAnonymously(function(error, authData) {
 
 $(function() {
     item_list = new CategoryCollection();
-    cart_list = new ItemCollection();
+    cart_list = new CartCollection();
+
     cart = new CartView({collection: cart_list});
     app = new AppView({collection: item_list});
 
