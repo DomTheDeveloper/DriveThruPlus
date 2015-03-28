@@ -1,4 +1,4 @@
-var auth_object, item_list, cart_list, app,
+var auth_object, item_list, cart_list, cart, app,
     myApp = new Framework7({
         cache: false
     }),
@@ -23,7 +23,9 @@ ref.authAnonymously(function(error, authData) {
 });
 
 $(function() {
-    item_list = new ItemCollection();
+    item_list = new CategoryCollection();
+    cart_list = new ItemCollection();
+    cart = new CartView({collection: cart_list});
     app = new AppView({collection: item_list});
 
     $("#start-togetherjs").click(TogetherJS);

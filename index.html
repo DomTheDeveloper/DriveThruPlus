@@ -34,9 +34,16 @@
             <div class="pages">
                 <div class="cart page" data-page="index-left">
                     <div class="page-content">
-                        <div class="content-block-title">Your Items</div>
-                        <div id="user-cart" class="list-block">
-                            <ul>
+                        <div class="row">
+                            <div class="col-50">
+                                <p>Your Items</p>
+                            </div>
+                            <div class="col-50">
+                                <a href="#" id="clear" class="button">Clear</a>
+                            </div>
+                        </div>  
+                        <div class="list-block">
+                            <ul id="user-cart">
                                 <li class="swipeout">
                                     <div class="item-content swipeout-content">
                                         <div class="item-inner">
@@ -129,7 +136,7 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <div class="center sliding">
-                        Menu
+                        Categories
                     </div>
                 </div>
             </div>
@@ -139,7 +146,7 @@
                     <div class="page-content">
 
                         <div class="content-block">
-                            <div id="item-list" class="row">
+                            <div id="category-list" class="row">
                             </div>
                         </div>
                     </div>
@@ -148,14 +155,26 @@
         </div>
     </div>
 
-    <script type="text/template" id="item_template">
-        <div class="card card-header-pic">
+    <script type="text/template" id="category_template">
+        <a href="category.html?name=<%= title %>"><div class="card card-header-pic">
             <div style="background-image:url('<%= imagelink %>')" valign="bottom" class="card-header color-black no-border"><%= title %></div>
             <div class="card-content">
                 <div class="card-content-inner">
                     <p><%= description %></p>
                 </div>
             </div>
+        </div></a>
+    </script>
+
+    <script type="text/template" id="item_template">
+        <div class="card card-header-pic">
+            <div style="background-image:url('<%= imagelink %>')" valign="bottom" class="card-header color-black no-border"><%= name %></div>
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <p><%= description %></p>
+                </div>
+            </div>
+            <div class="card-footer">$<%= price %></div>
         </div>
     </script>
 
@@ -163,7 +182,7 @@
         <div class="item-content swipeout-content">
             <div class="item-inner">
                 <div class="item-title"><%= name %></div>
-                <div class="item-after">$100.00</div>
+                <div class="item-after">$<%= price %></div>
             </div>
         </div>
         <div class="swipeout-actions-right">
@@ -187,9 +206,15 @@
     </script>
     <script src="https://togetherjs.com/togetherjs-min.js"></script>
 
+    <script src="static/js/models/category.js"></script>
     <script src="static/js/models/item.js"></script>
+    <script src="static/js/collections/categories.js"></script>
     <script src="static/js/collections/items.js"></script>
+    <script src="static/js/views/categoryview.js"></script>
     <script src="static/js/views/itemview.js"></script>
+    <script src="static/js/views/itemitemview.js"></script>
+    <script src="static/js/views/cart.js"></script>
+    <script src="static/js/views/cartitemview.js"></script>
     <script src="static/js/views/app.js"></script>
     <script src="static/js/main.js"></script>
 </body>

@@ -1,10 +1,10 @@
-var CartItemView = Backbone.View.extend({
-    tagName:  "li",
-    className: "swipeout",
-    template: _.template($('#cart_template').html()),
+var ItemItemView = Backbone.View.extend({
+    tagName:  "div",
+    className: "col-33",
+    template: _.template($('#item_template').html()),
 
     events: {
-        "click .action1": "destroy"
+        "click": "addToCart"
     },
 
     initialize: function () {
@@ -13,12 +13,13 @@ var CartItemView = Backbone.View.extend({
     },
 
     render: function() {
+        console.log(this.model.toJSON());
         this.$el.html(this.template(this.model.toJSON()));
+
         return this;
     },
 
-    destroy: function () {
-        this.model.destroy();
-        this.remove();
+    addToCart: function () {
+        cart_list.add(this.model);
     }
 });

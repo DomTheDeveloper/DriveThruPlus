@@ -11,14 +11,26 @@
     width:calc(100% - 321px)
 }
 
+#clear {
+    margin-top: 8px;
+}
+
 .card-header-pic {
     cursor: pointer;
 }
 
 .card-header-pic .card-header {
-    height: 400px;
+    height: 120px;
     background-size: cover;
     background-position: center;
+}
+
+#category-list .card-header-pic .card-header {
+    height: 400px;
+}
+
+.card-content-inner p {
+    color: black;
 }
 
 @media (max-width: 768px) {
