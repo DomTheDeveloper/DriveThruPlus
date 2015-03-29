@@ -7,7 +7,6 @@
 </head>
 <body>
     <div class="statusbar-overlay"></div>
-
     <div class="panel-overlay"></div>
 
     <div class="views">
@@ -23,14 +22,16 @@
             <div class="pages">
                 <div class="cart page" data-page="index-left">
                     <div class="page-content">
-                        <div class="row">
-                            <div class="col-50">
-                                <p>Your Items</p>
-                            </div>
-                            <div class="col-50">
-                                <a href="#" id="clear" class="button">Clear</a>
-                            </div>
-                        </div> 
+                        <div class="content-block">
+                            <div class="row">
+                                <div class="col-50">
+                                    <p>Your Items</p>
+                                </div>
+                                <div class="col-50">
+                                    <a href="#" id="clear" class="button">Clear</a>
+                                </div>
+                            </div> 
+                        </div>
 
                         <div class="list-block">
                             <ul id="user-cart">
@@ -86,7 +87,7 @@
     <script type="text/template" id="category_template">
         <a href="category.html?name=<%= title %>"><div class="card card-header-pic">
             <div style="background-image:url('<%= imagelink %>')" valign="bottom" class="card-header color-black no-border">
-				<span style="text-decoration:bold; font-size:xx-large;" class=""><%= title %></span>
+				<span class=""><%= title %></span>
 			</div>
             <div class="card-content">
                 <div class="card-content-inner">
@@ -99,14 +100,13 @@
     <script type="text/template" id="item_template">
         <div class="card card-header-pic">
             <div style="background-image:url('<%= imagelink %>')" valign="bottom" class="card-header color-black no-border">
-			<span style="text-decoration:bold; font-size:xx-large;" class=""><%= name %> ($<%= price %>)</span>
+			<span><%= name %> ($<%= price %>)</span>
 			</div>
             <div class="card-content">
                 <div class="card-content-inner">
                     <p><%= description %></p>
                 </div>
             </div>
-            <div class="card-footer"></div>
         </div>
     </script>
 
@@ -127,6 +127,7 @@
     <script src="static/js/vendor/jquery.min.js"></script>
     <script src="static/js/vendor/underscore.js"></script>
     <script src="static/js/vendor/backbone.js"></script>
+    <script src="static/js/vendor/store.js"></script>
 
     <!-- Firebase -->
     <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
@@ -152,12 +153,6 @@
     <script src="static/js/main.js"></script>
 
     <!-- Brain Tree PayPal -->
-
     <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
-
-
-
-
-
 </body>
 </html>

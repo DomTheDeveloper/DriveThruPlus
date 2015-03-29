@@ -5,7 +5,7 @@
 }
 
 .page-content {
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .navbar {
@@ -16,7 +16,7 @@
     width: -webkit-calc(100% - 321px);
     width: -moz-calc(100% - 321px);
     width: -ms-calc(100% - 321px);
-    width: calc(100% - 321px)
+    width: calc(100% - 321px);
 }
 
 #clear {
@@ -29,13 +29,18 @@
 }
 
 .card-header-pic .card-header {
-    height: 500px;
+    height: 200px;
     background-size: cover;
     background-position: center;
 }
 
 #category-list .card-header-pic .card-header {
-    height: 500px;
+    height: 300px;
+    font-size: 20px;
+}
+
+#item-list .card-header-pic .card-header {
+    font-size: 20px;
 }
 
 .card-content-inner p {

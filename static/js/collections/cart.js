@@ -1,4 +1,6 @@
 var CartCollection = Backbone.Firebase.Collection.extend({
     model: Item,
-    url: "https://drive-through-plus.firebaseio.com/cart"
+    url: function() {
+        return new Firebase("https://drive-through-plus.firebaseio.com/carts/" + auth_object.uid);
+    }
 });
