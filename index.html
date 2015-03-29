@@ -45,9 +45,9 @@
                         </div>
                         <div class="content-block">
                             <a href="#" class="button button-big button-fill" onclick="showText()" id="checkout-btn">Checkout</a>
-                            <form id="checkout" method="POST" action="/checkout" style="display: none">  
+                            <form id="checkout" style="display: none">  
                                 <div id="dropin" style="padding-top: 25px; padding-bottom: 15px"></div>
-                                <input type="submit" value="Complete" class="button">
+                                <input id="complete" type="submit" value="Complete" class="button">
                             </form>
 
                             <a href="#" id="clear" class="button button-big" onClick="showCheckout()">Clear</a>
@@ -92,7 +92,7 @@
 
     <script type="text/template" id="category_template">
         <a href="category.html?name=<%= title %>"><div class="card card-header-pic">
-            <div style="background-image:url('<%= imagelink %>')" valign="bottom" class="card-header color-black no-border">
+            <div style="background-image:url('<%= imagelink %>'") valign="bottom" class="card-header color-black no-border">
                 <span class=""><%= title %></span>
             </div>
             <div class="card-content">
