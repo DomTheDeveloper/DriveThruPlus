@@ -15,7 +15,7 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <div class="center sliding">
-						<img src="static/img/dommy.png" style="height:100px;" />
+                        <img src="static/img/dommy.png" style="height:100px;" />                  
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                                 <p>Your Items</p>
                             </div>
                             <div class="col-50">
-                                <a href="#" id="clear" class="button">Clear</a>
+                                <a href="#" id="clear" class="button" onclick="showCheckout()">Clear</a>
                             </div>
                         </div> 
 
@@ -38,7 +38,7 @@
                             </ul>
                         </div>
 
-                        <div class="content-block-title">Total: $<span id="cart-total">1000</span></div>
+                        <div class="content-block-title">Total: $<span id="cart-total">0</span></div>
                         <div class="content-block">
                             <a href="#" class="button button-big button-fill" onclick="showText()" id="checkout-btn">Checkout</a>
                             <form id="checkout" method="POST" action="/checkout" style="display: none">  
@@ -119,7 +119,7 @@
             </div>
         </div>
         <div class="swipeout-actions-right">
-            <a href="#" class="action1 bg-red">Remove</a>
+            <a href="#" class="action1 bg-red" onclick="showCheckout()">Remove</a>
         </div>
     </script>
 

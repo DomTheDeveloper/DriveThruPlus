@@ -67,3 +67,8 @@ $(function() {
         document.getElementById("checkout-btn").style.display="none";
     }
 
+    function showCheckout() {
+        document.getElementById("checkout-btn").style.display="block";
+        document.getElementById("checkout").style.display="none";
+    }
+
