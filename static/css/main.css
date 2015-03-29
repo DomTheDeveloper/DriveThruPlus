@@ -5,7 +5,7 @@
 }
 
 .page-content {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .navbar {
@@ -20,8 +20,8 @@
 }
 
 #clear {
-    margin-top: 8px;
-	margin-right:6px;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .card-header-pic {

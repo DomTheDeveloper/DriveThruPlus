@@ -19,6 +19,7 @@ var CategoryView = Backbone.View.extend({
 
     link: function() {
         var data = this.model.get("items");
+        console.log(this.model.toJSON());
         var json_list = [];
 
         _.each(data, function(value, key) {
