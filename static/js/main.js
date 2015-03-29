@@ -16,6 +16,11 @@ function showText() {
     document.getElementById("checkout-btn").style.display="none";
 }
 
+function showCheckout() {
+    document.getElementById("checkout-btn").style.display="block";
+    document.getElementById("checkout").style.display="none";
+}
+
 
 $(function() {
     auth_object = store.get('auth');
@@ -81,4 +86,3 @@ $(function() {
             container: 'dropin'
         });
 });
-

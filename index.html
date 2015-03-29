@@ -28,8 +28,7 @@
                                 
                             </ul>
                         </div>
-
-                        <div class="content-block-title">Total: $<span id="cart-total">1000</span></div>
+                        <div class="content-block-title">Total: $<span id="cart-total">0</span></div>
 
                         <div class="list-block">
                         <ul>
@@ -44,7 +43,6 @@
                             </li>
                         </ul>
                         </div>
-
                         <div class="content-block">
                             <a href="#" class="button button-big button-fill" onclick="showText()" id="checkout-btn">Checkout</a>
                             <form id="checkout" method="POST" action="/checkout" style="display: none">  
@@ -52,7 +50,7 @@
                                 <input type="submit" value="Complete" class="button">
                             </form>
 
-                            <a href="#" id="clear" class="button button-big">Clear</a>
+                            <a href="#" id="clear" class="button button-big" onClick="showCheckout()">Clear</a>
                         </div>
 
                         <div class="content-block">
@@ -63,7 +61,7 @@
                                 </a>
                             </a>
                         </div>
-                        <br><br>
+                        <br><br><br>
                     </div>
                 </div>
             </div>
@@ -126,7 +124,7 @@
             </div>
         </div>
         <div class="swipeout-actions-right">
-            <a href="#" class="action1 bg-red">Remove</a>
+            <a href="#" class="action1 bg-red" onclick="showCheckout()">Remove</a>
         </div>
     </script>
 
